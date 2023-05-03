@@ -39,3 +39,19 @@ def faz_jogada(tabuleiro, linha, coluna):
     else:
         tabuleiro[linha][coluna] = '-'
     return tabuleiro
+
+
+def posiciona_frota(infos_navios):
+    tabuleiro = []
+    for i in range(0,10):
+        lista = []
+    
+        for i in range(0,10):
+            lista.append(0)
+        tabuleiro.append(lista)
+
+    for posicoes in infos_navios.values():
+        for posicao in posicoes:
+            for posicao_exata in posicao:
+                tabuleiro[posicao_exata[0]][posicao_exata[1]] = 1
+    return tabuleiro
