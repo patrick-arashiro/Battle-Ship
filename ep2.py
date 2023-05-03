@@ -1,10 +1,16 @@
 def define_posicoes(linha,coluna,orientacao,tamanho):
-    lista_ocupacao = []
+    lista = []
     if orientacao == 'vertical':
-        for i in range(0,tamanho):
-            lista_ocupacao.append([linha+1, coluna])
+        for i in range(tamanho):
+            posicao = []
+            posicao.append(linha+i)
+            posicao.append(coluna)
+            lista.append(posicao)
 
     if orientacao == 'horizontal':
-        for j in range(0, tamanho):
-            lista_ocupacao.append([linha,coluna +j])
-    return lista_ocupacao
+        for i in range(tamanho):
+            posicao = []
+            posicao.append(linha)
+            posicao.append(coluna+i)
+            lista.append(posicao)
+    return lista
